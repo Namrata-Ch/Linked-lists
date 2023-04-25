@@ -1,41 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-void add_end(int);
-struct node
-{
-	int data;
-	strcut node *next;
-};
-struct node*start * NULL;
 
-int main(){
-	struct node *newnode;
-	newnode*(struct node*)malloc(sizeof(struct node));
-	start = newnode;
-	newnode-> data=20;
-	newnode-> next=NULL;
-	add_end(30);
-	add_end(40);
-	add_begin(10);
-	display();
-	}
-	
-void add_end(int info){
-	struct node *newnode,*temp;
-	temp=start;
-	newnode=(struct node*)malloc(sizeof(struct node));
-	newnode-> data=info;
-	newnode-> next=NULL;
-	while(temp->next!=NULL)
-		temp=temp->next;
-	temp->next=newnode;
+// Creating a node
+struct node {
+  int value;
+  struct node *next;
+};
+
+// print the linked list value
+void printLinkedlist(struct node *p) {
+  while (p != NULL) {
+    printf("%d ", p->value);
+    p = p->next;
+  }
 }
 
-void display(){
-	struct node *temp;
-	temp=start;
-	while(temp!=NULL){
-		printf("data=%d selfaddr=%d nextaddr=%d\n",temp->data,temptemp->next);
-		temp=temp->next;
-	}
+int main() {
+  // Initialize nodes
+  struct node *head;
+  struct node *one = NULL;
+  struct node *two = NULL;
+  struct node *three = NULL;
+
+  // Allocate memory
+  one = malloc(sizeof(struct node));
+  two = malloc(sizeof(struct node));
+  three = malloc(sizeof(struct node));
+
+  // Assign value values
+  one->value = 1;
+  two->value = 2;
+  three->value = 3;
+
+  // Connect nodes
+  one->next = two;
+  two->next = three;
+  three->next = NULL;
+
+  // printing node-value
+  head = one;
+  printLinkedlist(head);
 }
